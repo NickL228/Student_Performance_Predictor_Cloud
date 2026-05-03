@@ -34,3 +34,6 @@ def predict_student(request):
 def history(request):
     data = Prediction.objects.all().order_by('-created_at')
     return render(request, "predictor/history.html", {"data": data})
+
+def home(request):
+    return render(request, "predictor/home.html")
