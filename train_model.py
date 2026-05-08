@@ -37,7 +37,6 @@ df = pd.DataFrame(data, columns=[
     "result"
 ])
 
-# Split data
 X = df[["study_hours", "attendance", "assignment_score", "previous_grade"]]
 y = df["result"]
 

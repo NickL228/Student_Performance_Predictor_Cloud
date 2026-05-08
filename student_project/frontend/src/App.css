@@ -1,0 +1,123 @@
+body {
+  background-color: #f4f6f9;
+  font-family: Arial, sans-serif;
+}
+
+.App {
+  text-align: center;
+  margin-top: 40px;
+}
+
+form {
+  background: white;
+  padding: 30px;
+  width: 500px;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+form div {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+small {
+  color: #666;
+  font-size: 12px;
+}
+
+button {
+  margin-top: 15px;
+  padding: 10px 25px;
+  background-color: #4a6cf7;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #3a57d6;
+}
+
+h2 {
+  margin-top: 20px;
+}
+
+button + button {
+  margin-left: 15px;
+}
+
+.history {
+  width: 80%;
+  margin: 30px auto;
+}
+
+.history table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+.history th {
+  background-color: #222;
+  color: white;
+  padding: 12px;
+  text-align: left;
+}
+
+.history td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.history tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.auth-box {
+  background: white;
+  padding: 20px;
+  width: 500px;
+  margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.auth-box input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.auth-box button {
+  margin: 5px;
+  padding: 8px 15px;
+  background-color: #4a6cf7;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.auth-box button:hover {
+  background-color: #3a57d6;
+}

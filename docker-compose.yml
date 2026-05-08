@@ -1,0 +1,39 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: student_mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: student_db
+      MYSQL_USER: student_user
+      MYSQL_PASSWORD: student_pass
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  django:
+    build:
+      context: ./student_project
+    container_name: student_django
+    command: sh -c "sleep 25 && python manage.py runserver 0.0.0.0:8000" ## i added delay to ensure MySQL container fully starts before Django connects, without this delay, Django may fail because the database is not ready yet
+
+    volumes:
+      - ./student_project:/app
+    depends_on:
+      - mysql
+
+  nginx:
+    image: nginx:latest
+    container_name: student_nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./student_project/frontend/build:/usr/share/nginx/html
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - django
+
+volumes:
+  mysql_data:
